@@ -27,8 +27,8 @@
 1. Клонируйте репозиторий:
 
    ```sh
-   git clone https://github.com/your-repo/news-crud.git
-   cd news-crud
+   git clone https://github.com/pirate2403/seotlt-task.git
+   cd seotlt-task
    ```
 
 2. Установите зависимости:
