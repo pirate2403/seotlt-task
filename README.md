@@ -46,7 +46,7 @@
 4. Для запуска Storybook:
 
    ```sh
-   npm run storybook
+   npm run dev:ui
    ```
 
 5. Сборка проекта:
