@@ -1,0 +1,36 @@
+.root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--opacity-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+
+  .loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 156px;
+    height: 122px;
+    padding: 20px;
+    border-radius: 8px;
+    background: var(--color-light-gray);
+  }
+
+  .done {
+    margin-top: 6px;
+    transform: rotate(45deg);
+    color: var(--color-green);
+  }
+
+  .error {
+    color: var(--color-red);
+    transform: rotate(0deg);
+  }
+}

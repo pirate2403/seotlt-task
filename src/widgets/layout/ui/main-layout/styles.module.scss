@@ -1,0 +1,54 @@
+@use 'styles/_breakpoint.mixins' as *;
+
+.root {
+  --container-width: 1180px;
+  --offset-y: 52px;
+  --offset-x: 40px;
+  --container-gap: 120px;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--container-gap);
+  min-height: 100dvh;
+  background-color: var(--color-light-gray);
+  padding: var(--offset-y) var(--offset-x);
+
+  @include mobile {
+    --container-gap: 40px;
+    --offset-x: 20px;
+  }
+
+  .content {
+    margin: 0 auto;
+    width: 100%;
+    flex-grow: 1;
+    max-width: var(--container-width);
+    z-index: 2;
+  }
+
+  .icon {
+    display: none;
+    position: absolute;
+    z-index: 0;
+
+    @include desktop {
+      display: block;
+    }
+
+    &_green {
+      top: 0;
+      right: 0;
+    }
+
+    &_bordered {
+      bottom: 0;
+      left: 0;
+    }
+
+    &_small {
+      bottom: 0;
+      right: 0;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: inherit;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5;
+  color: var(--color-black);
+  font-size: calc(16px * var(--font-coefficient));
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input,
+textarea,
+button,
+select {
+  font: inherit;
+  border: none;
+  outline: none;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}

@@ -1,0 +1,23 @@
+@use 'styles/_breakpoint.mixins' as *;
+
+.root {
+  --columns: 3;
+  --column-gap: 24px;
+  --row-gap: 60px;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  gap: var(--row-gap) var(--column-gap);
+
+  @include tablet {
+    --columns: 2;
+    --column-gap: 30px;
+    --row-gap: 40px;
+  }
+
+  @include mobile {
+    --columns: 1;
+    --column-gap: 0;
+    --row-gap: 30px;
+  }
+}

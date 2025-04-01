@@ -1,0 +1,46 @@
+.root {
+  &.primary {
+    font-family: var(--font--primary);
+
+    &.bold {
+      font-weight: 700;
+    }
+
+    &.medium {
+      font-weight: 500;
+    }
+
+    &.regular {
+      font-weight: 400;
+    }
+  }
+
+  &.secondary {
+    font-family: var(--font-secondary);
+    font-weight: 700;
+  }
+
+  &.xxl {
+    font-size: calc(25px * var(--font-coefficient));
+  }
+
+  &.xl {
+    font-size: calc(20px * var(--font-coefficient));
+  }
+
+  &.lg {
+    font-size: calc(18px * var(--font-coefficient));
+  }
+
+  &.md {
+    font-size: calc(16px * var(--font-coefficient));
+  }
+
+  &.sm {
+    font-size: calc(14px * var(--font-coefficient));
+  }
+
+  &.xs {
+    font-size: calc(12px * var(--font-coefficient));
+  }
+}

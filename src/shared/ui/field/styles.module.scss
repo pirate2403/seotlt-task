@@ -1,0 +1,135 @@
+.root {
+  --label-color: var(--color-black);
+  --field-color: var(--color-black);
+  --field-border: transparent;
+  --field-padding-right: 20px;
+  --indicator-display: none;
+  --indicator-color: var(--color-green);
+  --error-message-offset: 16px;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-bottom: var(--error-message-offset);
+
+  &.disabled {
+    --label-color: var(--color-dark-gray);
+  }
+
+  &.error {
+    --label-color: var(--color-red);
+    --field-color: var(--color-red);
+    --field-border: var(--color-red);
+    --indicator-color: var(--color-red);
+  }
+
+  &.withIndicator {
+    --field-padding-right: calc(20px + 26px);
+  }
+
+  &.withoutMessage {
+    --error-message-offset: 0;
+  }
+
+  &:not(.error, .disabled):is(:hover, :focus-within) {
+    --field-border: var(--color-green);
+  }
+
+  &:not(.error, .disabled):focus-within {
+    --field-color: var(--color-black);
+  }
+
+  &:not(.disabled):is(.error, :has(input:not(:placeholder-shown)), :has(textarea:not(:placeholder-shown))) {
+    &.withIndicator {
+      --indicator-display: block;
+    }
+  }
+
+  .label {
+    position: relative;
+    width: fit-content;
+    color: var(--label-color);
+    transition: color 0.2s ease;
+
+    &::after {
+      content: '';
+      display: var(--indicator-display);
+      position: absolute;
+      top: 50%;
+      left: calc(100% + 6px);
+      transform: translateY(-50%);
+      border-radius: 50%;
+      width: 12px;
+      height: 12px;
+      background: var(--indicator-color);
+      transition: background-color 0.2s ease;
+    }
+  }
+
+  .field {
+    width: 100%;
+    color: var(--field-color);
+    background: var(--color-gray);
+    border-radius: 12px;
+    border: 1px solid var(--field-border);
+    padding: 10px 1px;
+    transition:
+      border-color 0.2s ease,
+      padding 0.2s ease,
+      color 0.2s ease;
+
+    & > input {
+      width: 100%;
+      height: 20px;
+      border: none;
+      background: none;
+      padding: 0 18px;
+
+      &::placeholder {
+        color: var(--color-dark-gray);
+      }
+    }
+
+    & > textarea {
+      width: 100%;
+      border: none;
+      background: none;
+      padding: 0 18px;
+      margin-bottom: -14px;
+      resize: vertical;
+
+      &::-webkit-scrollbar {
+        width: 12px;
+        height: 0;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--color-dark-gray);
+        border-radius: 12px;
+        border: 2px solid var(--color-gray);
+        cursor: pointer;
+
+        :hover {
+          background-color: var(--indicator-color);
+        }
+      }
+
+      &::-webkit-scrollbar-corner {
+        background: none;
+        border: none;
+      }
+
+      &::placeholder {
+        color: var(--color-dark-gray);
+      }
+    }
+  }
+
+  .message {
+    position: absolute;
+    left: 4px;
+    bottom: 0;
+    color: var(--color-red);
+  }
+}
